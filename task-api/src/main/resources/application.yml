@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: task-api
+  datasource:
+    url: jdbc:h2:mem:taskdb;DB_CLOSE_DELAY=-1
+  jpa:
+    open-in-view: false          # don't keep DB sessions open during view rendering
+    hibernate:
+      ddl-auto: none             # schema is owned by Flyway, never by Hibernate
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health          # expose only what is needed
